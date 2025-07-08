@@ -1,6 +1,6 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import './styles/App.css';
-import { getWeatherData } from './services/weatherApi';
+import { getWeatherDataByCity, getWeatherDataByCoords } from './services/weatherApi';
 
 const App = () => {
   const [city, setCity] = useState('');
@@ -8,12 +8,37 @@ const App = () => {
   const [loading, setLoading] = useState(false);
   const [error, setError] = useState('');
 
+  useEffect(() => {
+    // Try to get user's location on load
+    if ("geolocation" in navigator) {
+      navigator.geolocation.getCurrentPosition(
+        async (position) => {
+          setLoading(true);
+          try {
+            const data = await getWeatherDataByCoords(
+              position.coords.latitude,
+              position.coords.longitude
+            );
+            setWeather(data);
+            setError('');
+          } catch (err) {
+            setError('Failed to fetch weather for your location.');
+          }
+          setLoading(false);
+        },
+        (err) => {
+          console.log('Geolocation denied or failed.', err);
+        }
+      );
+    }
+  }, []);
+
   const handleSearch = async () => {
     if (!city.trim()) return;
     setLoading(true);
     setError('');
     try {
-      const data = await getWeatherData(city);
+      const data = await getWeatherDataByCity(city);
       setWeather(data);
       setCity('');
     } catch (err) {
