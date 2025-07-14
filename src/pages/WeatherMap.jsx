@@ -4,7 +4,7 @@ import "leaflet/dist/leaflet.css";
 
 const WeatherMap = () => {
     const [layer, setLayer] = useState("temp_new");
-    const apiKey = "YOUR_API_KEY_HERE";
+    const apiKey = "ed2c6f01bb2131ab77462e6db97d0939";
 
     return (
         <div className="map-page">

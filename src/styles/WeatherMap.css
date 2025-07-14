@@ -1,0 +1,9 @@
+/* src/styles/WeatherMap.css */
+.map-container {
+    width: 100%;
+    height: 80vh;
+    margin: 0 auto;
+    border: 2px solid #add8ff;
+    border-radius: 15px;
+    overflow: hidden;
+}
