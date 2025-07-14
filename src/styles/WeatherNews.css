@@ -1,0 +1,54 @@
+.weather-news {
+    margin-top: 30px;
+    text-align: center;
+    color: #fff;
+}
+
+.news-cards {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 25px;
+    margin-top: 25px;
+}
+
+.news-card {
+    background: rgba(0, 0, 0, 0.6);
+    border: 2px solid #0ff;
+    border-radius: 15px;
+    padding: 20px;
+    width: 280px;
+    transition: transform 0.3s, border-color 0.3s;
+}
+
+.news-card:hover {
+    transform: translateY(-8px);
+    border-color: #0f0;
+}
+
+.news-card img {
+    width: 100%;
+    border-radius: 10px;
+    margin-bottom: 15px;
+}
+
+.news-card h3 {
+    margin: 0 0 10px;
+    font-size: 18px;
+}
+
+.news-card p {
+    font-size: 14px;
+    color: #ddd;
+}
+
+.news-card a {
+    display: inline-block;
+    margin-top: 10px;
+    color: #0ff;
+    text-decoration: none;
+}
+
+.news-card a:hover {
+    color: #0f0;
+}
