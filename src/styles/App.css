@@ -1,13 +1,13 @@
 /* Base reset & dark theme */
 body {
-  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-  background: #0d0d0d;
-  /* slightly deeper black */
+  background: url('https://cdn.pixabay.com/video/2023/05/07/162017-824606478_large.mp4') no-repeat center center fixed;
+  background-size: cover;
   color: #e0e0e0;
   margin: 0;
   padding: 0;
   text-align: center;
 }
+
 
 /* App container */
 .app {
@@ -115,4 +115,16 @@ button:hover {
 /* For weather map page buttons */
 .weather-map-buttons button {
   margin: 5px 8px;
+}
+
+.background-video {
+  position: fixed;
+  top: 0;
+  left: 0;
+  min-width: 100%;
+  min-height: 100%;
+  object-fit: cover;
+  z-index: -1;
+  filter: brightness(0.4);
+  /* Optional: darken video to improve text visibility */
 }
