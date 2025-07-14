@@ -104,3 +104,27 @@ button:hover {
     width: 80%;
   }
 }
+
+.forecast-grid {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 20px;
+  margin-top: 20px;
+}
+
+.forecast-grid .weather-card {
+  flex: 0 0 calc(33% - 20px);
+}
+
+@media (max-width: 768px) {
+  .forecast-grid .weather-card {
+    flex: 0 0 calc(50% - 20px);
+  }
+}
+
+@media (max-width: 480px) {
+  .forecast-grid .weather-card {
+    flex: 0 0 100%;
+  }
+}
