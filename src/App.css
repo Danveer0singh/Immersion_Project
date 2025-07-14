@@ -12,9 +12,15 @@ html {
 }
 
 .app {
-    position: relative;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: flex-start;
     min-height: 100vh;
+    position: relative;
     z-index: 1;
+    padding-top: 80px;
+    /* space for navbar */
 }
 
 .background-video {
@@ -25,6 +31,7 @@ html {
     height: 100%;
     object-fit: cover;
     z-index: -1;
+    pointer-events: none;
 }
 
 .app::before {
@@ -36,12 +43,17 @@ html {
     height: 100%;
     background: rgba(0, 0, 0, 0.4);
     z-index: 0;
+    pointer-events: none;
 }
 
+
 nav {
-    position: relative;
+    position: fixed;
+    top: 0;
+    width: 100%;
     text-align: center;
     padding: 20px;
+    background: rgba(0, 0, 0, 0.5);
     z-index: 2;
 }
 
@@ -57,9 +69,30 @@ nav a:hover {
     color: #ffffff;
 }
 
+/* Container for search input + button */
+.search-container {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+    margin: 20px 0;
+}
+
+.map-card {
+    background: rgba(0, 0, 0, 0.6);
+    padding: 20px;
+    margin: 20px auto;
+    border-radius: 15px;
+    max-width: 90%;
+    /* wider map */
+    width: 90%;
+    text-align: center;
+    z-index: 2;
+}
+
+/* Center all cards nicely */
 .weather-card,
 .forecast-card,
-.map-card,
 .news-card {
     background: rgba(0, 0, 0, 0.6);
     padding: 20px;
@@ -70,9 +103,106 @@ nav a:hover {
     z-index: 2;
 }
 
+
+
+
+/* Center other page content too */
+.page-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+/* Responsive nav */
 @media (max-width: 768px) {
     nav a {
         display: block;
         margin: 10px 0;
     }
+
+    .search-container {
+        flex-direction: column;
+    }
+}
+
+.map-page {
+    width: 100%;
+    max-width: 1200px;
+    margin: 0 auto;
+    text-align: center;
+    padding: 20px;
+}
+
+.map-buttons {
+    margin-bottom: 20px;
+}
+
+.map-buttons button {
+    background: rgba(0, 0, 0, 0.6);
+    color: #fff;
+    border: none;
+    padding: 10px 15px;
+    margin: 5px;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: background 0.3s;
+}
+
+.map-buttons button:hover {
+    background: rgba(255, 255, 255, 0.2);
+}
+
+.map-card {
+    width: 100%;
+    max-width: 100%;
+    padding: 0;
+    margin: 0 auto;
+    background: rgba(0, 0, 0, 0.5);
+    border-radius: 15px;
+}
+
+.map-page {
+    width: 100%;
+    max-width: 1200px;
+    margin: 0 auto;
+    text-align: center;
+    padding: 20px;
+}
+
+.map-buttons {
+    margin-bottom: 20px;
+}
+
+.map-buttons button {
+    background: rgba(0, 0, 0, 0.6);
+    color: #fff;
+    border: none;
+    padding: 10px 15px;
+    margin: 5px;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: background 0.3s;
+}
+
+.map-buttons button:hover {
+    background: rgba(255, 255, 255, 0.2);
+}
+
+.map-card {
+    width: 100%;
+    margin: 0 auto;
+    border-radius: 15px;
+    overflow: hidden;
+}
+
+.leaflet-container {
+    width: 100% !important;
+    height: 500px !important;
+    border-radius: 15px;
+}
+
+.leaflet-container {
+    width: 100% !important;
+    height: 500px !important;
 }

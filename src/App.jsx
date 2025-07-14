@@ -11,7 +11,7 @@ function App() {
   return (
     <div className="app">
       <video autoPlay loop muted className="background-video">
-        <source src="https://cdn.pixabay.com/video/2023/05/07/162017-824606478_large.mp4" type="video/mp4" />
+        <source src="https://cdn.pixabay.com/video/2020/05/24/40034-424911925_large.mp4" type="video/mp4" />
         Your browser does not support the video tag.
       </video>
 
